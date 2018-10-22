@@ -4,8 +4,7 @@
   "main": "lib/index",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --port 8000",
-    "build": "webpack -p --display-optimization-bailout --progress --colors",
-    "real": "webpack"
+    "build": "webpack"
   },
   "license": "MIT",
   "dependencies": {
