@@ -3,7 +3,8 @@
 
 引入图片
 ```
-<img src={require('~IMG/index.jpg')} />
+// images设置了别名，直接IMG/xxx
+<img src={require('IMG/index.jpg')} />
 ```
 
 ## 开发：
@@ -18,6 +19,6 @@ open http://localhost:8000
 ## 构建：
 
 ```
-npm run real
+npm run build
 ```
 

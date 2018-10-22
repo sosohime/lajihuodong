@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <div className="index">
         <Link to="sleepingpPosture">
-          <img src={require('../images/index.jpg')} alt=""/>
+          <img src={require('IMG/index.jpg')} alt=""/>
         </Link>
       </div>
     );
