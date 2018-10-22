@@ -1,24 +1,23 @@
-# antd-mobile with webpack
+# react + antd-mobile with webpack
+开发用hashHistory, build时候index里面改成browHistory
 
-basic proj demo with webpack@2 and tree-shaking
+引入图片
+```
+<img src={require('~IMG/index.jpg')} />
+```
 
-### Install & Start
+## 开发：
+```
+npm i
 
-```shell
-npm i  # npm i --save-dev webpack@2 webpack-dev-server@2 extract-text-webpack-plugin
 npm start
 ```
 
-open http://localhost:8000/
+open http://localhost:8000
 
-### Build
+## 构建：
 
-```sh
-npm run build  # then see dist dir
-# Note: you should remove `webpack-visualizer-plugin / webpack-bundle-analyzer` code in webpack.config.js file for production environment.
+```
+npm run real
 ```
 
-bundle analyzer tools: 
-[webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) / 
-[webpack-visualizer-plugin](https://www.npmjs.com/package/webpack-visualizer-plugin) 
-(Note: [just for dist bundle file analyse](https://github.com/th0r/webpack-bundle-analyzer/issues/86))
