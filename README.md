@@ -1,21 +1,5 @@
-# react + antd-mobile
-开发用hashHistory, build时候index里面改成browHistory
+大转盘活动
 
-引入图片
-```
-<img src={require('~IMG/index.jpg')} />
-```
+|--  2       UI稿、切图
 
-## 开发：
-```
-npm i
-
-npm start
-```
-
-## 构建：
-
-```
-npm run real
-```
-
+|--  web     项目
