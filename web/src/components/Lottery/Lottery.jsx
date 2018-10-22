@@ -3,16 +3,16 @@ import './index.css'
 
 let deg = 0;        // 转盘旋转角度
 let prizeIndex = 0; //获取的奖品
-//设置奖品，ratio为概率
+//设置奖品，ratio为概率%
 let data = [
-    { label: '<p>价值</p><p>33888元</p><p>希腊蜜月游</p>', ratio: 0.05, level: '特等奖' },
-    { label: '乳胶枕', ratio: 0.1, level: '一等奖' },
-    { label: '蜜月抱枕', ratio: 0.2, level: '二等奖' },
-    { label: '现金券200元', ratio: 0.1, level: '三等奖' },
-    { label: '现金券100元', ratio: 0.1, level: '三等奖' },
-    { label: '现金券50元', ratio: 0.1, level: '三等奖' },
-    { label: '蜜月笔记本', ratio: 0.01, level: '幸运奖' },
-    { label: '盒装纸抽', ratio: 0.01, level: '参与奖' },
+    { label: '<p>价值</p><p>33888元</p><p>希腊蜜月游</p>', ratio: 0.00003, level: '特等奖', total: 1 },
+    { label: '乳胶枕', ratio: 0.007, level: '一等奖', total: 200 },
+    { label: '蜜月抱枕', ratio: 0.017, level: '二等奖', total: 500 },
+    { label: '现金券200元', ratio: 0.033, level: '三等奖', total: 1000 },
+    { label: '现金券100元', ratio: 0.066, level: '三等奖', total: 2000 },
+    { label: '现金券50元', ratio: 0.331, level: '三等奖', total: 10000 },
+    { label: '蜜月笔记本', ratio: 0.017, level: '幸运奖', total: 500 },
+    { label: '盒装纸抽', ratio: 0.53, level: '参与奖', total: 16000 },
 ];
 
 export default class App extends Component {
@@ -88,16 +88,16 @@ export default class App extends Component {
     /* 根据概率计算奖品index */
     calculateRatio () {
         let totalRatio = 0; //总概率
-        data.map( item => { totalRatio += item.ratio });
+        data.map( item => { totalRatio += item.ratio * item.total });
 
         let temp = [];
         data.map( (item, index) => {
-            for(let i=0; i<Math.round(item.ratio/totalRatio*100); i++){
+            for(let i = 0; i < Math.round(item.ratio * item.total / totalRatio * 100); i++){
                 temp.push(index)
             }
         });
         //乱序
-        temp.sort( () => Math.random()>0.5?-1:1 );
+        temp.sort(() => Math.random() > 0.5 ? -1 : 1);
 
         let index = Math.random()*temp.length >>> 0;
         return temp[index]
