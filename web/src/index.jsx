@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute, Link } from 'react-router';
 
+import fetch from 'LIB/fetch';
+import { initConfig } from 'LIB/wechat';
+
 import Index from './components/Index';
 import SleepingPosture from './components/SleepingPosture/SleepingPosture';
 import Postures from './components/SleepingPosture/Postures';
@@ -13,6 +16,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
+  
+  componentDidMount() {
+    // TODO: get wechat sign
+    fetch('/getsign')
+      .then(res => {
+        initConfig({...res})
+      })
+  }
+
   render() {
     return (
       <div className="container">

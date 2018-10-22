@@ -5,7 +5,6 @@ const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const postcssOpts = {
   ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
   plugins: () => [
@@ -34,7 +33,8 @@ module.exports = {
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules'), path.join(__dirname, 'src')],
     alias: {
-      IMG: path.resolve(__dirname, 'src/images')
+      IMG: path.resolve(__dirname, 'src/images'),
+      LIB: path.resolve(__dirname, 'src/lib')
     },
     extensions: ['.web.js', '.jsx', '.js', '.json'],
   },
